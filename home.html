@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lets Smile Studio</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Font similar to reference -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <img src="logo/IMG_20251003_161209.jpg" alt="Lets Smile Studio Logo" />
+      </div>
+      <ul class="studio-name">
+        <li>
+          <a href=""> Lets Smile Studio</a>
+        </li>
+      </ul>
+      <nav>
+        <ul>
+          <li><a href="#">My Works</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About Me</a></li>
+        </ul>
+      </nav>
+
+
+       <button class="nav-toggle" id="nav-toggle" title="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>
+        BEAUTIFUL MOMENT <br />
+        IS EVERYTHING
+      </h1>
+
+      <div class="image-box left">
+        <img
+          src="hero/522637616_1259847939202873_4247991476321990201_n.heic.jpg"
+          alt="Wedding Couple"
+        />
+        <p>Preserving your special day in frames that last a lifetime.</p>
+      </div>
+
+      <div class="image-box center">
+        <img
+          src="hero/486276662_17906243694132674_413706514159559551_n.jpg"
+          alt="Bride Groom"
+        />
+        <p>Capturing the joy of your most unforgettable moments.</p>
+        <a href="#" class="btn">Hire Me</a>
+      </div>
+
+      <div class="image-box right">
+        <img
+          src="hero/469038083_17890490973132674_359354671997490413_n.jpg"
+          alt="Wedding Scene"
+        />
+        <p>Every smile tells a story worth remembering forever.</p>
+      </div>
+
+      <div class="image-box-text">
+        <p>
+          At Lets Smile Studio, we turn emotions into timeless memories with
+          creativity, elegance, and passion.
+        </p>
+      </div>
+
+      <div class="scroll-down">
+        <a href="#next-section" class="scroll-btn">
+          <i class="fas fa-arrow-down"></i>
+          <p>Scroll Down</p>
+        </a>
+      </div>
+    </section>
+
+
+
+    <script>
+  const toggleBtn = document.getElementById("nav-toggle");
+  const navMenu = document.querySelector("nav ul");
+
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+
+    // Change icon (bars ↔ close)
+    const icon = toggleBtn.querySelector("i");
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+  });
+</script>
+
+  </body>
+</html>
+

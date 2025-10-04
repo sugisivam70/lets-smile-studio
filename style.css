@@ -1,0 +1,439 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Marcellus', serif;
+  background: #f8f7f5;
+  color: #111;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+header .logo img {
+  height: 60px;
+  rotate: -90deg;
+}
+
+.studio-name  li a {
+  font-family: 'Cinzel', serif;
+  font-size: 24px;
+  text-decoration: none;
+  color: #b88a44;
+  margin-left: 10px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  color: #000;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #b88a44;
+}
+
+
+
+
+/* Fade-in and slide-up animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to sections */
+section {
+  opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+/* Delay each section slightly */
+section:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+section:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+section:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+section:nth-of-type(4) {
+  animation-delay: 0.8s;
+}
+
+/* Navbar hover animation */
+nav ul li a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ff7b54; /* Accent color */
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff7b54;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  height: 160vh;
+  background:linear-gradient(
+    90deg,
+    #ffbb55,
+    #b88a44 500px,
+    #ffffff 500px,
+    #ffffff 500px
+  );
+}
+
+.hero h1 {
+  color: #000000;
+  font-size: 5.5rem;
+  font-family: 'Cinzel', serif;
+  line-height: 1.3;
+  margin-bottom: 50px;
+  font-weight: 300;
+  position: relative;
+   z-index: 2;  
+}
+
+.image-box {
+  position: absolute;
+  width: 280px;
+  padding-bottom: 1rem;
+  z-index: 1;
+  
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 5px;
+  
+}
+
+.image-box p {
+  font-family: 'Marcellus', serif;
+  font-size: 17px;
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+/* Positioning */
+.image-box.left {
+  left: 10%;
+  top: 350px;
+}
+
+.image-box.center {
+  left: 40%;
+  top: 264px;
+}
+
+.image-box.right {
+  right: 9%;
+  top: 150px;
+}
+
+
+/* Drop from top animation */
+@keyframes dropFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px); /* start above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* final position */
+  }
+}
+
+.image-box {
+  position: absolute;
+  width: 280px;
+  padding-bottom: 1rem;
+  z-index: 1;
+
+  opacity: 0; /* hidden initially */
+  animation: dropFromTop 1s ease forwards;
+}
+
+/* Delay each card */
+.image-box.left {
+  left: 10%;
+  top: 350px;
+  animation-delay: 0.2s;
+}
+
+.image-box.center {
+  left: 40%;
+  top: 264px;
+  animation-delay: 0.7s; /* 0.5s after the left card */
+}
+
+.image-box.right {
+  right: 9%;
+  top: 150px;
+  animation-delay: 1.2s; /* another 0.5s later */
+}
+
+.image-box-text {
+  position: absolute;
+  width: 280px;
+  left: 65%;
+  top: 750px;
+  border-top: 3px solid #ccc;
+  border-right: none;
+  border-left: none;  
+  padding-top: 1.5rem;
+ 
+  padding-bottom: 1rem;
+}
+
+.scroll-btn {
+  position: absolute;
+  left: 10%;
+  top: 810px;
+}
+
+/* Button */
+.btn {
+  position: absolute;
+  display: inline-block;
+  margin-top: 15px;
+  background: #000;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius:300px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-family: 'Cinzel', serif;
+  left: 80%;
+  top: 270px;
+}
+
+.btn:hover {
+  background: #b88a44;
+}
+
+/* Scroll Down Button */
+.scroll-btn {
+  position: absolute;
+  bottom: 0;
+  right: 35px;
+  width: 35px;
+  height: 35px;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+.scroll-btn p {
+  position: absolute;
+  bottom: -38px;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: 'Marcellus', serif;
+} 
+
+.scroll-btn:hover {
+ background: #ffffff;
+ color: #000000;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  margin-top: 500px;
+  font-size: 14px;
+}
+
+/* ...existing code... */
+
+/* Navbar Toggle Button */
+/* Hide toggle by default */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px; /* adjust based on header */
+    right: 20px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    padding: 10px 10px;
+  }
+  .studio-name li a {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+  nav ul {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background: #f8f7f5;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    border-top: 1px solid #ccc;
+    display: none;
+    z-index: 1000;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  nav ul li a {
+    font-size: 18px;
+    color: #b88a44;
+  }
+
+  .studio-name li a {
+    font-size: 20px;
+    margin-left: 0;
+  }
+
+  /* Hero Section Responsive */
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .image-box,
+  .image-box.left,
+  .image-box.center,
+  .image-box.right,
+  .image-box-text,
+  .btn,
+  .scroll-btn {
+    position: static;
+    width: 100%;
+    left: unset;
+    right: unset;
+    top: unset;
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+
+  .image-box img {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .image-box-text {
+    border-top: 2px solid #ccc;
+    padding-top: 1rem;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btn {
+    width: 150px;
+    margin: 20px auto;
+    left: unset;
+    top: unset;
+    position: static;
+    display: block;
+  }
+
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    margin: 20px auto;
+    position: static;
+    display: flex;
+    justify-content: center;
+ 
+  }
+}
+
+/* ...existing code... */
